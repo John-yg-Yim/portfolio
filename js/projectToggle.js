@@ -1,49 +1,41 @@
-let currentDetailId = null;
+let currentlyOpenSectionId = null;
+let currentlyOpenButton = null;
 
-function toggleSectionWithFetch(id, htmlPath) {
-  const detailSection = document.getElementById(`section-${id}`);
-  const detailContent = document.getElementById(`content-${id}`);
-  const card = document.getElementById(`card-${id}`);
-  const grid = card?.parentElement; // .grid 요소
+function toggleSectionWithFetch(projectId, htmlPath = null) {
+  const detailSection = document.getElementById(`section-${projectId}`);
+  const contentDiv = document.getElementById(`content-${projectId}`);
+  const button = event.currentTarget;
 
-  if (!detailSection || !card || !grid) return;
-
-  // 현재 열려있는 항목을 다시 클릭하면 닫기
-  if (currentDetailId === id) {
-    detailSection.style.display = 'none';
-    currentDetailId = null;
-    return;
+  if (currentlyOpenSectionId && currentlyOpenSectionId !== projectId) {
+    // 이전 열려있던 디테일 닫기
+    document.getElementById(`section-${currentlyOpenSectionId}`).style.display = 'none';
+    if (currentlyOpenButton) {
+      currentlyOpenButton.innerHTML = 'View Details ▼';
+    }
   }
 
-  // 모든 section 숨기기
-  document.querySelectorAll(".project-detail").forEach(sec => {
-    sec.style.display = "none";
-  });
+  const card = document.getElementById(`card-${projectId}`);
+  if (detailSection.style.display === 'none') {
+    detailSection.style.display = 'block';
+    card.insertAdjacentElement('afterend', detailSection);  // ✅ 아래로 열림
+    button.innerHTML = 'View Details ▲';                    // ✅ 버튼 토글
+    currentlyOpenSectionId = projectId;
+    currentlyOpenButton = button;
 
-  // 콘텐츠 로드
-  if (htmlPath && detailContent.innerHTML.trim() === "Loading...") {
-    fetch(htmlPath)
-      .then(res => res.text())
-      .then(html => {
-        detailContent.innerHTML = html;
-      });
-  }
-
-  // 해당 카드 바로 뒤로 이동
-  const next = card.nextElementSibling;
-  detailSection.style.display = 'block';
-
-  if (next) {
-    grid.insertBefore(detailSection, next);
+    if (htmlPath && contentDiv.innerHTML.trim() === 'Loading...') {
+      fetch(htmlPath)
+        .then(res => res.text())
+        .then(data => {
+          contentDiv.innerHTML = data;
+        })
+        .catch(err => {
+          contentDiv.innerHTML = 'Failed to load content.';
+        });
+    }
   } else {
-    grid.appendChild(detailSection);
+    detailSection.style.display = 'none';
+    button.innerHTML = 'View Details ▼';
+    currentlyOpenSectionId = null;
+    currentlyOpenButton = null;
   }
-
-  currentDetailId = id;
-}
-
-function hideProjectDetail() {
-  const detailSection = document.getElementById(`section-${currentDetailId}`);
-  if (detailSection) detailSection.style.display = "none";
-  currentDetailId = null;
 }
