@@ -1,6 +1,6 @@
 
 function toggleSectionWithFetch(id, filePath) {
-  const ids = ['tumor', 'llm'];
+  const ids = ['tumor', 'llm', 'birdclef'];
   ids.forEach(sec => {
     const section = document.getElementById(`section-${sec}`);
     const content = document.getElementById(`content-${sec}`);
