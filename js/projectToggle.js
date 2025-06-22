@@ -1,3 +1,7 @@
+// ✅ 전역 변수 정의 추가 (함수 밖에 위치해야 함)
+let currentlyOpenSectionId = null;
+let currentlyOpenButton = null;
+
 function toggleSectionWithFetch(projectId, htmlPath = null) {
   const detail = document.getElementById(`section-${projectId}`);
   const content = document.getElementById(`content-${projectId}`);
@@ -10,16 +14,16 @@ function toggleSectionWithFetch(projectId, htmlPath = null) {
     if (currentlyOpenButton) currentlyOpenButton.innerHTML = 'View Details ▼';
   }
 
-  if (detail.style.display === 'none') {
+  if (detail.style.display === 'none' || detail.style.display === '') {
     detail.style.display = 'block';
     button.innerHTML = 'View Details ▲';
     currentlyOpenSectionId = projectId;
     currentlyOpenButton = button;
 
-    // 카드 바로 뒤에 append
+    // 카드 바로 뒤에 삽입
     card.insertAdjacentElement('afterend', detail);
 
-    // 내용 fetch
+    // 콘텐츠 로드
     if (htmlPath && content.innerHTML.trim() === 'Loading...') {
       fetch(htmlPath)
         .then(res => res.text())
