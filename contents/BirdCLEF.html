@@ -60,6 +60,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 | Distributed under the terms of the Modified BSD License.
 |----------------------------------------------------------------------------*/
 
+/* 마크다운 테이블 왼쪽 정렬 */
+table {
+  margin: 0 !important;       /* 왼쪽 정렬 */
+  /* 혹은 margin-left: 0; margin-right: auto; 로 지정 */
+}
+
 /*
  * Mozilla scrollbar styling
  */
@@ -7789,14 +7795,45 @@ a.anchor-link {
 <li><strong>After</strong>: <code>tf_efficientnetv2_s.in21k_ft_in1k</code></li>
 </ul>
 </li>
-<li><strong>Mel-Spectrogram Hyperparameters</strong>
-| Parameter      | Before | After |
-|----------------|:------:|:-----:|
-| <code>n_fft</code>        | 1024   | 2048  |
-| <code>hop_length</code>   | 512    | 512   |
-| <code>n_mels</code>       | 128    | 512   |
-| <code>fmin</code>         | 50     | 20    |
-| <code>fmax</code>         | 14000  | 16000 |</li>
+<li><strong>Mel-Spectrogram Hyperparameters</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Before</th>
+<th style="text-align:center">After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>n_fft</code></td>
+<td style="text-align:center">1024</td>
+<td style="text-align:center">2048</td>
+</tr>
+<tr>
+<td><code>hop_length</code></td>
+<td style="text-align:center">512</td>
+<td style="text-align:center">512</td>
+</tr>
+<tr>
+<td><code>n_mels</code></td>
+<td style="text-align:center">128</td>
+<td style="text-align:center">512</td>
+</tr>
+<tr>
+<td><code>fmin</code></td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td><code>fmax</code></td>
+<td style="text-align:center">14000</td>
+<td style="text-align:center">16000</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><strong>Loss Function</strong><ul>
 <li><strong>Before</strong>: <code>BCEWithLogitsLoss</code></li>
 <li><strong>After</strong>: <code>FocalLossBCE</code></li>
