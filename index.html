@@ -231,29 +231,30 @@
       <h2 class="text-2xl font-semibold text-teal-300 mb-4">Projects</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Project 1: 뇌종양 카드 -->
+
+        <!-- Project 3: BirdCLEF -->
         <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition
                     order-1 md:order-1">
-          <img alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover" src="images/brain_tumor.jpg"/>
+          <img alt="캐글 컴페티션" class="w-full h-80 object-cover" src="images/BirdCLEF+2025.jpg"/>
           <div class="p-5 space-y-2">
-            <h3 class="text-xl font-semibold text-teal-200">BRAIN TUMOR CLASSIFICATION USING DEEPLEARNING</h3>
-            <p class="text-sm text-gray-400">Individual Capstone Project | Duration: Aug. 2023 – Nov. 2023</p>
+            <h3 class="text-xl font-semibold text-teal-200">KAGGLE COMPETITION BIRDCLEF+2025</h3>
+            <p class="text-sm text-gray-400">Competition Entry (5 members) | Duration: May. 2025 – June. 2025</p>
             <p class="text-gray-300 text-sm">
-              Built a deep learning model to classify the presence and type of brain tumor using MRI image data.
+              Detect and classify 206 bird species from 60-second soundscape recordings in natural environments.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
               <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center"
-                 href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">
+                 href="https://huggingface.co/spaces/JohnYim0213/BirdCLEF" target="_blank">
                 Launch Demo (Hugging Face Space)
               </a>
               <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center"
-                 href="https://github.com/John-Yim/brain-tumor-classification" target="_blank">
+                 href="https://github.com/John-yg-Yim/BirdCLEF-2025" target="_blank">
                 View Code (GitHub)
               </a>
             </div>
             <div class="text-center mt-4">
-              <button class="text-teal-400 hover:underline" id="btn-tumor"
-                      onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">
+              <button class="text-teal-400 hover:underline" id="btn-birdclef"
+                      onclick="toggleSectionWithFetch('birdclef', 'contents/BirdCLEF.html')">
                 View Details ▼
               </button>
             </div>
@@ -276,7 +277,7 @@
                 Launch Demo (Hugging Face Space)
               </a>
               <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center"
-                 href="https://github.com/John-Yim/complaint-classification" target="_blank">
+                 href="https://github.com/John-yg-Yim/complaint_classification" target="_blank">
                 View Code (GitHub)
               </a>
             </div>
@@ -288,17 +289,46 @@
             </div>
           </div>
         </div>
+        
+        <!-- Project 1: 뇌종양 카드 -->
+        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition
+                    order-1 md:order-1">
+          <img alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover" src="images/brain_tumor.jpg"/>
+          <div class="p-5 space-y-2">
+            <h3 class="text-xl font-semibold text-teal-200">BRAIN TUMOR CLASSIFICATION USING DEEPLEARNING</h3>
+            <p class="text-sm text-gray-400">Individual Capstone Project | Duration: Aug. 2023 – Nov. 2023</p>
+            <p class="text-gray-300 text-sm">
+              Built a deep learning model to classify the presence and type of brain tumor using MRI image data.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+              <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center"
+                 href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">
+                Launch Demo (Hugging Face Space)
+              </a>
+              <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center"
+                 href="https://github.com/John-yg-Yim/brain_tumor_classification" target="_blank">
+                View Code (GitHub)
+              </a>
+            </div>
+            <div class="text-center mt-4">
+              <button class="text-teal-400 hover:underline" id="btn-tumor"
+                      onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">
+                View Details ▼
+              </button>
+            </div>
+          </div>
+        </div>
 
-        <!-- Project 1 -->
-        <div id="section-tumor"
+        <!-- Project 3 -->
+        <div id="section-birdclef"
              class="project-detail bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed
-                    order-2 md:order-3 col-span-1 md:col-span-2"
+                    order-4 md:col-span-2"
              style="display: none;">
           <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
-            <div id="content-tumor">Loading...</div>
+            <div id="content-birdclef">Loading...</div>
             <div class="text-right mt-4">
               <button class="text-teal-400 hover:underline"
-                      onclick="toggleSectionWithFetch('tumor')">Close ▲
+                      onclick="toggleSectionWithFetch('birdlclef')">Close ▲
               </button>
             </div>
           </div>
@@ -314,6 +344,21 @@
             <div class="text-right mt-4">
               <button class="text-teal-400 hover:underline"
                       onclick="toggleSectionWithFetch('llm')">Close ▲
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <div id="section-tumor"
+             class="project-detail bg-white text-black p-4 rounded-xl shadow-lg text-sm leading-relaxed
+                    order-2 md:order-3 col-span-1 md:col-span-2"
+             style="display: none;">
+          <div class="p-4 rounded-lg text-sm leading-relaxed isolate bg-white text-black">
+            <div id="content-tumor">Loading...</div>
+            <div class="text-right mt-4">
+              <button class="text-teal-400 hover:underline"
+                      onclick="toggleSectionWithFetch('tumor')">Close ▲
               </button>
             </div>
           </div>
