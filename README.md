@@ -1,4 +1,4 @@
-# ✨ (Portfolio of John Yim)[https://john-yg-yim.github.io/portfolio/]
+# ✨ [Portfolio of John Yim](https://john-yg-yim.github.io/portfolio/)
 
 Welcome!
 This is the portfolio of **John Yim**, an aspiring **AI Engineer** with a background in deep learning, NLP, and computer vision.
