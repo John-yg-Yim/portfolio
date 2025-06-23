@@ -1,75 +1,97 @@
 // projectToggle.js
 
-// 전역 변수: 그리드, 카드, 섹션
-const grid      = document.getElementById('projects-grid');
-const cards     = Array.from(document.querySelectorAll('.project-card'));
-const sections  = Array.from(document.querySelectorAll('.project-section'));
+// 1) Grid 컨테이너
+const grid = document.getElementById('projects-grid');
+
+// 2) 카드 래퍼와 섹션 매핑
+const wrappers = {
+  birdclef: document.getElementById('card-birdclef-wrapper'),
+  llm:      document.getElementById('card-llm-wrapper'),
+  tumor:    document.getElementById('card-tumor-wrapper'),
+};
+const sections = {
+  birdclef: document.getElementById('section-birdclef'),
+  llm:      document.getElementById('section-llm'),
+  tumor:    document.getElementById('section-tumor'),
+};
+
+// 3) 토글 버튼 (View/Close) 모두
+const toggleButtons = Array.from(document.querySelectorAll('.toggle-btn'));
 
 /**
- * 프로젝트 상세 토글 함수
+ * 프로젝트 상세 토글 + 레이아웃 재배치
  * @param {string} project - 'birdclef' | 'llm' | 'tumor'
- * @param {string} [url]   - (optional) 상세 HTML 경로. 없으면 단순 토글만 수행.
+ * @param {string} [url]   - 상세 HTML 경로 (없으면 단순 토글)
  */
 function toggleSectionWithFetch(project, url) {
-  const targetSection = document.getElementById(`section-${project}`);
-  const targetContent = document.getElementById(`content-${project}`);
-  const isOpen        = !targetSection.classList.contains('hidden');
+  const sec   = sections[project];
+  const isOpen = !sec.classList.contains('hidden');
 
-  // 1) 모든 섹션 닫기 & 버튼 텍스트 초기화 & 카드 order 초기화
-  sections.forEach(sec => sec.classList.add('hidden'));
-  cards.forEach(card => card.style.order = '');
-  document.querySelectorAll(`.toggle-btn[data-project]`).forEach(btn => {
-    btn.innerText = 'View Details ▼';
+  // 1) 모두 닫기 + 순서(order) 초기화 + 버튼 텍스트 초기화
+  Object.values(sections).forEach(s => {
+    s.classList.add('hidden');
+    s.style.order = '';
+  });
+  Object.values(wrappers).forEach(w => {
+    w.style.order = '';
+  });
+  toggleButtons.forEach(btn => {
+    btn.textContent = 'View Details ▼';
   });
 
-  if (isOpen) {
-    // 이미 열려 있었다면 닫기만
-    return;
-  }
+  // 이미 열려 있던 프로젝트면 여기서 종료
+  if (isOpen) return;
 
-  // 2) 외부 HTML 로드 (url이 주어졌을 때만)
+  // 2) URL 있으면 AJAX 로드
   if (url) {
+    const contentDiv = document.getElementById(`content-${project}`);
     fetch(url)
       .then(res => res.text())
-      .then(html => { targetContent.innerHTML = html; })
-      .catch(() => { targetContent.innerHTML = 'Failed to load.'; });
+      .then(html => { contentDiv.innerHTML = html; })
+      .catch(() => { contentDiv.innerHTML = 'Failed to load.'; });
   }
 
   // 3) 해당 섹션 열기
-  targetSection.classList.remove('hidden');
+  sec.classList.remove('hidden');
 
-  // 4) PC 레이아웃용 순서 재배치 (md 이상)
-  let orderMap;
+  // 4) PC(md 이상) 배치용 order 맵 설정
+  let orderMap = {};
   switch (project) {
     case 'birdclef':
+      orderMap = {
+        'card-birdclef-wrapper': 1,
+        'card-llm-wrapper':      2,
+        'section-birdclef':      3,
+        'card-tumor-wrapper':    4,
+      };
+      break;
     case 'llm':
       orderMap = {
-        'card-birdclef':        1,
-        'card-llm':             2,
-        [`section-${project}`]: 3,
-        'card-tumor':           4
+        'card-birdclef-wrapper': 1,
+        'card-llm-wrapper':      2,
+        'section-llm':           3,
+        'card-tumor-wrapper':    4,
       };
       break;
     case 'tumor':
       orderMap = {
-        'card-birdclef':        1,
-        'card-llm':             2,
-        'card-tumor':           3,
-        [`section-${project}`]: 4
+        'card-birdclef-wrapper': 1,
+        'card-llm-wrapper':      2,
+        'card-tumor-wrapper':    3,
+        'section-tumor':         4,
       };
       break;
-    default:
-      orderMap = {};
   }
+  // order 적용
   Object.entries(orderMap).forEach(([id, ord]) => {
     const el = document.getElementById(id);
     if (el) el.style.order = ord;
   });
 
-  // 5) 해당 프로젝트 버튼만 "Close ▲"로 변경
-  document
-    .querySelectorAll(`.toggle-btn[data-project="${project}"]`)
+  // 5) 해당 프로젝트 토글 버튼만 Close ▲ 로 변경
+  toggleButtons
+    .filter(btn => btn.dataset.project === project)
     .forEach(btn => {
-      btn.innerText = 'Close ▲';
+      btn.textContent = 'Close ▲';
     });
 }
