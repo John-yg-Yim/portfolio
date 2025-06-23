@@ -233,19 +233,21 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Project 1: BirdCLEF + Detail -->
-        <div class="flex flex-col col-span-1 md:col-span-1">
-          <div id="card-birdclef" class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-            <img alt="캐글 컴페티션" class="w-full h-80 object-cover" src="images/BirdCLEF+2025.png"/>
-            <div class="p-5 space-y-2">
-              <h3 class="text-xl font-semibold text-teal-200">KAGGLE COMPETITION BIRDCLEF+2025</h3>
-              <p class="text-sm text-gray-400">Competition Entry (5 members) | Duration: May. 2025 – June. 2025</p>
-              <p class="text-gray-300 text-sm">Detect and classify 206 bird species from 60-second soundscape recordings in natural environments.</p>
-              <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
-                <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/BirdCLEF" target="_blank">Launch Demo (Hugging Face Space)</a>
-                <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center" href="https://github.com/John-yg-Yim/BirdCLEF-2025" target="_blank">View Code (GitHub)</a>
-              </div>
-              <div class="text-center mt-4">
-                <button id="btn-birdclef" class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('birdclef', 'contents/BirdCLEF.html')">View Details ▼</button>
+        <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div id="card-birdclef" class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+              <img alt="캐글 컴페티션" class="w-full h-80 object-cover" src="images/BirdCLEF+2025.png"/>
+              <div class="p-5 space-y-2">
+                <h3 class="text-xl font-semibold text-teal-200">KAGGLE COMPETITION BIRDCLEF+2025</h3>
+                <p class="text-sm text-gray-400">Competition Entry (5 members) | Duration: May. 2025 – June. 2025</p>
+                <p class="text-gray-300 text-sm">Detect and classify 206 bird species from 60-second soundscape recordings in natural environments.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+                  <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/BirdCLEF" target="_blank">Launch Demo (Hugging Face Space)</a>
+                  <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center" href="https://github.com/John-yg-Yim/BirdCLEF-2025" target="_blank">View Code (GitHub)</a>
+                </div>
+                <div class="text-center mt-4">
+                  <button id="btn-birdclef" class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('birdclef', 'contents/BirdCLEF.html')">View Details ▼</button>
+                </div>
               </div>
             </div>
           </div>
@@ -260,19 +262,21 @@
         </div>
 
         <!-- Project 2: Complaint + Detail -->
-        <div class="flex flex-col col-span-1 md:col-span-1">
-          <div id="card-llm" class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-            <img alt="민원 분류 프로젝트" class="w-full h-80 object-cover" src="images/complaint.png"/>
-            <div class="p-5 space-y-2">
-              <h3 class="text-xl font-semibold text-teal-200">TEXT-BASED CIVIL COMPLAINT CLASSIFIER USING LLMS</h3>
-              <p class="text-sm text-gray-400">Individual Project | Duration: Feb 2025 – Apr 2025</p>
-              <p class="text-gray-300 text-sm">Classifies user-inputted complaint text into one of 18 categories and recommends relevant government agencies accordingly.</p>
-              <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
-                <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">Launch Demo (Hugging Face Space)</a>
-                <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center" href="https://github.com/John-yg-Yim/complaint_classification" target="_blank">View Code (GitHub)</a>
-              </div>
-              <div class="text-center mt-4">
-                <button id="btn-llm" class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('llm', 'contents/complaint.html')">View Details ▼</button>
+        <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div id="card-llm" class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+              <img alt="민원 분류 프로젝트" class="w-full h-80 object-cover" src="images/complaint.png"/>
+              <div class="p-5 space-y-2">
+                <h3 class="text-xl font-semibold text-teal-200">TEXT-BASED CIVIL COMPLAINT CLASSIFIER USING LLMS</h3>
+                <p class="text-sm text-gray-400">Individual Project | Duration: Feb 2025 – Apr 2025</p>
+                <p class="text-gray-300 text-sm">Classifies user-inputted complaint text into one of 18 categories and recommends relevant government agencies accordingly.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+                  <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">Launch Demo (Hugging Face Space)</a>
+                  <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center" href="https://github.com/John-yg-Yim/complaint_classification" target="_blank">View Code (GitHub)</a>
+                </div>
+                <div class="text-center mt-4">
+                  <button id="btn-llm" class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('llm', 'contents/complaint.html')">View Details ▼</button>
+                </div>
               </div>
             </div>
           </div>
@@ -287,19 +291,21 @@
         </div>
 
         <!-- Project 3: Tumor + Detail -->
-        <div class="flex flex-col col-span-1 md:col-span-1">
-          <div id="card-tumor" class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
-            <img alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover" src="images/brain_tumor.jpg"/>
-            <div class="p-5 space-y-2">
-              <h3 class="text-xl font-semibold text-teal-200">BRAIN TUMOR CLASSIFICATION USING DEEPLEARNING</h3>
-              <p class="text-sm text-gray-400">Individual Capstone Project | Duration: Aug. 2023 – Nov. 2023</p>
-              <p class="text-gray-300 text-sm">Built a deep learning model to classify the presence and type of brain tumor using MRI image data.</p>
-              <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
-                <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">Launch Demo (Hugging Face Space)</a>
-                <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center" href="https://github.com/John-yg-Yim/brain_tumor_classification" target="_blank">View Code (GitHub)</a>
-              </div>
-              <div class="text-center mt-4">
-                <button id="btn-tumor" class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">View Details ▼</button>
+        <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div id="card-tumor" class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:ring-2 hover:ring-teal-400 transition">
+              <img alt="뇌종양 분류 프로젝트" class="w-full h-80 object-cover" src="images/brain_tumor.jpg"/>
+              <div class="p-5 space-y-2">
+                <h3 class="text-xl font-semibold text-teal-200">BRAIN TUMOR CLASSIFICATION USING DEEPLEARNING</h3>
+                <p class="text-sm text-gray-400">Individual Capstone Project | Duration: Aug. 2023 – Nov. 2023</p>
+                <p class="text-gray-300 text-sm">Built a deep learning model to classify the presence and type of brain tumor using MRI image data.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-3 mt-4">
+                  <a class="px-4 py-2 text-sm font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-lg text-center" href="https://huggingface.co/spaces/JohnYim0213/project-note" target="_blank">Launch Demo (Hugging Face Space)</a>
+                  <a class="px-4 py-2 text-sm font-medium text-white bg-gray-700 hover:bg-gray-600 rounded-lg text-center" href="https://github.com/John-yg-Yim/brain_tumor_classification" target="_blank">View Code (GitHub)</a>
+                </div>
+                <div class="text-center mt-4">
+                  <button id="btn-tumor" class="text-teal-400 hover:underline" onclick="toggleSectionWithFetch('tumor', 'contents/brain_tumor.html')">View Details ▼</button>
+                </div>
               </div>
             </div>
           </div>
