@@ -18,8 +18,9 @@ All projects listed here were **individually implemented**, and include full sou
 
 | Project | Description | Links |
 |--------|-------------|--------|
-| **Brain Tumor Classification** | Deep learning-based MRI classification using transfer learning (ResNet50V2), with 99.5% accuracy | [🔗 Demo](https://huggingface.co/spaces/JohnYim0213/project-note) / [📂 Code](https://github.com/John-Yim/brain-tumor-classification) |
-| **Complaint Classification System** | Classifies user-submitted complaint texts into 18 categories and recommends government departments | [🔗 Demo](https://huggingface.co/spaces/JohnYim0213/project-note) / [📂 Code](https://github.com/John-Yim/complaint-classification) |
+| **Kaggle Competition BirdCLEF+2025** | Detect and classify 206 species of wildlife sounds from 60-second recordings in natural habitats | [🔗 Demo](https://huggingface.co/spaces/JohnYim0213/BirdCLEF) / [📂 Code](https://github.com/John-yg-Yim/BirdCLEF-2025) |
+| **Complaint Classification System** | Classifies user-submitted complaint texts into 18 categories and recommends government departments | [🔗 Demo](https://huggingface.co/spaces/JohnYim0213/project-note) / [📂 Code](https://github.com/John-yg-Yim/complaint_classification) |
+| **Brain Tumor Classification** | Deep learning-based MRI classification using transfer learning (ResNet50V2), with 99.5% accuracy | [🔗 Demo](https://huggingface.co/spaces/JohnYim0213/project-note) / [📂 Code](https://github.com/John-yg-Yim/brain_tumor_classification) |
 
 ---
 
