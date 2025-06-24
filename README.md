@@ -10,7 +10,7 @@ All projects listed here were **individually implemented**, and include full sou
 - 🎓 B.E. in Information & Communication Software Engineering, Sangji University (2018–2024 incl. Military service May. 2019 - Dec. 2020)
 - 🏆 Top Award in Capstone Project & Excellent Paper Award at Korea Institute of Convergence Signal Processing
 - 🔍 Passionate about building practical AI systems and solving real-world problems
-- 🌱 Currently focusing on applied machine learning and full-stack AI deployment
+- 🌱 Interested in multimodal AI — integrating vision, language, and sound in real-world systems
 
 ---
 
@@ -26,10 +26,14 @@ All projects listed here were **individually implemented**, and include full sou
 
 ## 🛠 Tech Stack
 
-- **Languages**: Python, C/C++, Java, SQL
-- **Frameworks**: PyTorch, Keras, scikit-learn, Flask
-- **Tools**: VSCode, Jupyter, Colab, GitHub
-- **Platforms**: Hugging Face, Azure, AWS EC2
+| Category | Experienced With | Familiar With |
+|----------|------------------|----------------|
+| **Language** | C/C++, Python | Java, C# |
+| **Frontend** | HTML, PHP | JavaScript |
+| **Backend** | MySQL, Flask | JSP |
+| **Framework / Library** | PyTorch, Keras, scikit-learn, OpenCV | TensorFlow |
+| **Tools & IDE** | VSCode, PyCharm, Jupyter Notebook, Google Colab | Eclipse |
+| **DevOps / Infra** | – | Git/GitHub, AWS EC2, Azure |
 
 ---
 
